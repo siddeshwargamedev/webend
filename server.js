@@ -25,10 +25,15 @@ app.get('/date', (req, res) => {
   res.json({ date: currentDate });
 });
 
-app.get('/div', (req, res) => {
-  const cur = 15 / 0
-  res.json({ res: cur });
+app.get("/div", (req, res) => {
+  res.setHeader("Content-Type", "application/json");
+  res.send('{"invalidJson": "missing quote}'); // malformed JSON
 });
+
+app.get("/throw", (req, res) => {
+    throw new Error("This is a test error thrown intentionally!");
+});
+
 
 // Start the server
 app.listen(PORT, () => {
