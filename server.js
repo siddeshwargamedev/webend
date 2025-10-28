@@ -25,6 +25,11 @@ app.get('/date', (req, res) => {
   res.json({ date: currentDate });
 });
 
+app.get('/div', (req, res) => {
+  const cur = 15 / 0
+  res.json({ res: cur });
+});
+
 // Start the server
 app.listen(PORT, () => {
   console.log(`Server running at http://localhost:${PORT}`);
