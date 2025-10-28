@@ -4,7 +4,7 @@ const cors = require('cors');
 const app = express();
 
 // Define a port
-const PORT = 3002;
+const PORT = process.env.PORT || 3002;
 
 app.use(cors());
 
