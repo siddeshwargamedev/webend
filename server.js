@@ -34,6 +34,14 @@ app.get("/throw", (req, res) => {
     throw new Error("This is a test error thrown intentionally!");
 });
 
+app.get("/forbidden", (req, res) => {
+  res.status(403).json({ error: "Forbidden - Access denied" });
+});
+
+// Route 4 - 404 Not Found
+app.get("/notfound", (req, res) => {
+  res.status(404).json({ error: "Not Found - Resource missing" });
+});
 
 // Start the server
 app.listen(PORT, () => {
